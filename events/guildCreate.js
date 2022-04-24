@@ -16,11 +16,6 @@ module.exports = {
         .setURL('http://wampas.gg/')
         .setEmoji('957042683749208094'),
         new MessageButton()
-        .setStyle('LINK')
-        .setLabel('Invite')
-        .setURL('https://discord.com/api/oauth2/authorize?client_id=940463579247829032&permissions=8&scope=bot%20applications.commands')
-        .setEmoji('956378103603658802'),
-        new MessageButton()
         .setLabel('Support')
         .setStyle('LINK')
         .setURL('https://discord.gg/CJ4HVZK2Za')

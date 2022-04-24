@@ -3,8 +3,10 @@ module.exports = {
   once: true,
   async execute(client) {
     console.log(`Logged in as ${client.user.tag}!`);
-    await client.user.setActivity('With Lofi Girl /', {
-      type: 'PLAYING'
-    });
+    const activities = [`With Lofi Girl /`, ` music?`];
+    setInterval(() => {
+      let activity = activities[Math.floor(Math.random() * activities.length)];
+      client.user.setActivity(activity, { type: "PLAYING" });
+    }, 20000);
   },
 };

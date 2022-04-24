@@ -7,6 +7,6 @@ const {
       .setName('lofi')
       .setDescription('Starts to play lofi hip hop!'),
     async execute(interaction, client) {
-      client.func.play(interaction, process.env.lofi, 'lofi hip hop', false)
+      client.func.play(interaction, process.env.lofi, 'Lofi Hip Hop', false)
     },
   };

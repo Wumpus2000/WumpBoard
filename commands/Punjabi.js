@@ -7,6 +7,6 @@ const {
       .setName('punjabi')
       .setDescription('Starts to play punjabi music / radio!'),
     async execute(interaction, client) {
-      client.func.play(interaction, process.env.PUNJABI, 'punjabi Music / Radio', false)
+      client.func.play(interaction, process.env.PUNJABI, 'Punjabi Music / Radio', false)
     },
   };

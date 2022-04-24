@@ -7,6 +7,6 @@ const {
       .setName('english')
       .setDescription('Starts to play english music / radio!'),
     async execute(interaction, client) {
-      client.func.play(interaction, process.env.ENGLISH, 'english Music / Radio', false)
+      client.func.play(interaction, process.env.ENGLISH, 'English Music / Radio', false)
     },
   };
