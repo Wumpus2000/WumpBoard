@@ -39,10 +39,10 @@ module.exports = {
     const embed = new MessageEmbed()
       .setColor('BLURPLE')
       .setAuthor({
-        name: "Wampas's Help Menu",
+        name: "Wampas's Help",
         iconURL: client.user.displayAvatarURL()
       })
-      .setDescription("\n\n**quick, Join Voice Channel and click <:CirclePlay:956032213009457202> button to play Lo-Fi Hip Hop**\n\n**Commands:**\n`forceplay`, `help`, `play`, `radio`, `stop`, `zen`\n\n*Note: Wampas uses slash commands, it doesn't have a prefix*")
+      .setDescription("\n\n**quick, Join Voice Channel and click <:CirclePlay:956032213009457202> button to play Lo-Fi Hip Hop**\n\n**Need help?:**\n`ask people in the server that your in right now`\n\n*Note: you can join our server for more help or join the community*")
 
       .setTimestamp()
     interaction.reply({
