@@ -3,58 +3,28 @@ const { MessageEmbed, MessageActionRow, MessageButton, MessageSelectMenu } = req
 module.exports = {
   name: 'guildCreate',
   async execute(guild, client) {
-    const row1 = new MessageActionRow()
-      .addComponents(
-        new MessageSelectMenu()
-          .setCustomId('select')
-          .setPlaceholder('Nothing selected')
-          .addOptions(
-            {
-              label: '/play',
-              description: 'Starts playing Lo-fi radio station!',
-              value: `play`,
-            },
-            {
-              label: '/radio',
-              description: 'Plays the stream from provided Radio station!',
-              value: `radio`,
-            },
-            {
-              label: '/forceplay',
-              description: 'Allows you to force play the given radio station',
-              value: `forceplay`,
-            },
-            {
-              label: '/stop',
-              description: 'Stops the current Voice session',
-              value: `stop`,
-            },
-            {
-              label: '/zen',
-              description: 'Starts playing Zen radio station!',
-              value: `zen`,
-            }
-          ),
-      );
-    let row2 = new MessageActionRow()
+    const row2 = new MessageActionRow()
       .addComponents(
         new MessageButton()
-          .setStyle('PRIMARY')
-          .setEmoji('▶️')
+          .setStyle('SECONDARY')
+          .setLabel('Play')
+          .setEmoji('956032213009457202')
           .setCustomId('play'),
         new MessageButton()
-          .setStyle('LINK')
-          .setURL('https://ko-fi.com/Himal')
-          .setEmoji('919834131670646824'),
+        .setStyle('LINK')
+        .setLabel('Website')
+        .setURL('http://wampas.gg/')
+        .setEmoji('957042683749208094'),
         new MessageButton()
-          .setStyle('LINK')
-          .setURL('https://discord.com/invite/nZRMdQeK6m')
-          .setEmoji('882684602639081492'),
+        .setStyle('LINK')
+        .setLabel('Invite')
+        .setURL('https://discord.com/api/oauth2/authorize?client_id=940463579247829032&permissions=8&scope=bot%20applications.commands')
+        .setEmoji('956378103603658802'),
         new MessageButton()
-          .setLabel('Invite Me')
-          .setStyle('LINK')
-          .setURL('https://himal.grizz1e.xyz/invite')
-          .setEmoji('882683102890197062')
+        .setLabel('Support')
+        .setStyle('LINK')
+        .setURL('https://discord.gg/CJ4HVZK2Za')
+        .setEmoji('956378149875253290')
       )
     try {
       let defaultChannel = "";
@@ -67,10 +37,12 @@ module.exports = {
       })
       let channel = guild.channels.cache.get(guild.systemChannelID || defaultChannel);
       let embed = new MessageEmbed()
-        .setColor("GREEN")
-        .setDescription("The available commands are provided below. To view the command description, select the command name from the selection menu provided below\n\n**Join a Voice Channel and hit the :arrow_forward: button to start playing**\n\n**Available Commands:**\n`forceplay`, `help`, `play`, `radio`, `stop`, `zen`\n\n*Note: Himal uses slash commands, it doesn't have a prefix*")
-        .setAuthor({name: "Thank you for inviting me to the server", url: "https://himal.grizz1e.xyz", iconURL: client.user.displayAvatarURL()})
-      channel.send({embeds: [embed], components: [ row2, row1 ]})
+        .setColor("BLURPLE")
+        .setTitle("Imagine a Bot...")
+        .setImage("https://cdn.discordapp.com/attachments/939720531492605963/967725122150604800/Desktop_Wallpaper.png")
+        .setDescription("Thank you for adding Wampas to your server! We have designed a friendly Bot makes it easier than ever to play music in your server 20/4. You can access our website & support server using the URL buttons below!\n\n**Join a Voice Channel then press the <:CirclePlay:956032213009457202> button to start playing**")
+        .setAuthor({name: "Wampas™r", iconURL: client.user.displayAvatarURL()})
+      channel.send({embeds: [embed], components: [ row2 ]})
     } catch (err) {
       return;
     }

@@ -24,7 +24,7 @@ module.exports = {
         let desc
         switch (interaction.values[0]) {
           case 'play':
-            desc = ['Starts playing Lo-fi radio station!']
+            desc = ['Starts to play Lo-fi radio station!']
             break;
           case 'radio':
             desc = ['Plays the stream from provided Radio station!', 'station', 'The name of the station to play', true]
@@ -35,20 +35,32 @@ module.exports = {
           case 'stop':
             desc = ['Stops the current Voice session']
             break;
-          case 'zen':
-            desc = ['Starts playing Zen radio station!']
+          case 'lofi':
+            desc = ['Starts to play lofi hip hop!']
+            break;
+          case 'english':
+            desc = ['Starts to play english music / radio!']
+            break;
+          case 'arabic ':
+            desc = ['Starts to play arabic music / radio!']
+            break;
+          case 'punjabi':
+            desc = ['Starts to play punjabi music / radio!']
+            break;
+          case 'spanish':
+            desc = ['Starts to play spanish music / radio!']
             break;
         }
         const embed = new MessageEmbed()
-          .setColor('GREEN')
+          .setColor('BLURPLE')
           .setAuthor({
-            name: "Himal's Help Menu",
+            name: "Wampas's Help Menu",
             iconURL: client.user.displayAvatarURL()
           })
           .setTitle(`/${interaction.values[0]}`)
           .setDescription(`${desc[0]}\n\n**Options**\n${desc.length == 1 ? "*Does not contain any options*" : `\`${desc[1]}\` - ${desc[2]} - ${desc[3] ? "Required" : "Optional"}`}`)
           .setFooter({
-            text: 'Himal',
+            text: 'Wampas',
             iconURL: client.user.displayAvatarURL()
           })
           .setTimestamp()

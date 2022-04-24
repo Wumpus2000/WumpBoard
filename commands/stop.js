@@ -4,9 +4,9 @@ const {
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('stop')
-    .setDescription('Stops the current Voice session'),
+    .setName('leave')
+    .setDescription('leaves the current Voice Channel'),
   async execute(interaction, client) {
-    client.func.stop(interaction);
+    client.func.leave(interaction);
   },
 };

@@ -33,23 +33,23 @@ module.exports = {
             .addComponents(
               new MessageButton()
               .setCustomId('previous')
-              .setStyle('PRIMARY')
-              .setEmoji('◀️'),
+              .setStyle('SECONDARY')
+              .setEmoji('956031533041483786'),
 
               new MessageButton()
               .setCustomId('select')
               .setStyle('SUCCESS')
-              .setEmoji('✅'),
+              .setEmoji('956034254557552691'),
 
               new MessageButton()
               .setCustomId('next')
-              .setStyle('PRIMARY')
-              .setEmoji('▶️'),
+              .setStyle('SECONDARY')
+              .setEmoji('957049956663980032'),
 
               new MessageButton()
               .setCustomId('close')
               .setStyle('DANGER')
-              .setEmoji('✖️')
+              .setEmoji('956034254582734879')
             )
           let i = 0
           let embed = new MessageEmbed()
@@ -59,10 +59,11 @@ module.exports = {
             })
             .setTitle(data[0].name)
             .setURL(data[0].homepage)
+            .setColor("BLURPLE")
             .setThumbnail(data[0].favicon.split(" ").join("%20"))
-            .setFooter({
-              text: '◀️ : Previous, ✅ : Select, ▶️ : Next, ❌ : Close'
-            })
+            .setDescription("<:CircleBack:956031533041483786> | Previous, <:CircleYes:956034254557552691>  | Select, <:CircleSkip:957049956663980032> | Next, <:CircleNo:956034254582734879> | Close")
+
+
           let intr = await interaction.reply({
             embeds: [embed],
             components: [row]

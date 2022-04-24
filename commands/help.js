@@ -13,67 +13,41 @@ module.exports = {
     .setName('help')
     .setDescription('Shows you a help menu!'),
   async execute(interaction, client) {
-    const row1 = new MessageActionRow()
-      .addComponents(
-        new MessageSelectMenu()
-        .setCustomId('select')
-        .setPlaceholder('Nothing selected')
-        .addOptions({
-          label: '/play',
-          description: 'Starts playing Lo-fi radio station!',
-          value: `play`,
-        }, {
-          label: '/radio',
-          description: 'Plays the stream from provided Radio station!',
-          value: `radio`,
-        }, {
-          label: '/forceplay',
-          description: 'Allows you to force play the given radio station',
-          value: `forceplay`,
-        }, {
-          label: '/stop',
-          description: 'Stops the current Voice session',
-          value: `stop`,
-        }, {
-          label: '/zen',
-          description: 'Starts playing Zen radio station!',
-          value: `zen`,
-        }),
-      );
-    let row2 = new MessageActionRow()
+
+    const row2 = new MessageActionRow()
       .addComponents(
         new MessageButton()
-        .setStyle('PRIMARY')
-        .setEmoji('▶️')
+        .setStyle('SECONDARY')
+        .setEmoji('956032213009457202')
         .setCustomId('play'),
         new MessageButton()
         .setStyle('LINK')
-        .setURL('https://ko-fi.com/Himal')
-        .setEmoji('919834131670646824'),
+        .setLabel('Website')
+        .setURL('http://wampas.gg/')
+        .setEmoji('957042683749208094'),
         new MessageButton()
         .setStyle('LINK')
-        .setURL('https://discord.com/invite/nZRMdQeK6m')
-        .setEmoji('882684602639081492'),
+        .setLabel('Invite')
+        .setURL('https://discord.com/api/oauth2/authorize?client_id=940463579247829032&permissions=8&scope=bot%20applications.commands')
+        .setEmoji('956378103603658802'),
         new MessageButton()
-        .setLabel('Invite Me')
+        .setLabel('Support')
         .setStyle('LINK')
-        .setURL('https://himal.grizz1e.xyz/invite')
-        .setEmoji('882683102890197062')
+        .setURL('https://discord.gg/CJ4HVZK2Za')
+        .setEmoji('956378149875253290')
       )
     const embed = new MessageEmbed()
-      .setColor('GREEN')
+      .setColor('BLURPLE')
       .setAuthor({
-        name: "Himal's Help Menu",
+        name: "Wampas's Help Menu",
         iconURL: client.user.displayAvatarURL()
       })
-      .setDescription("The available commands are provided below. To view the command description, select the command name from the selection menu provided below\n\n**Join a Voice Channel and hit the ▶️ button to start playing**\n\n**Available Commands:**\n`forceplay`, `help`, `play`, `radio`, `stop`, `zen`\n\n*Note: Himal uses slash commands, it doesn't have a prefix*")
-      .setFooter({
-        text: 'An open sourced project by Grizz1e'
-      })
+      .setDescription("\n\n**quick, Join Voice Channel and click <:CirclePlay:956032213009457202> button to play Lo-Fi Hip Hop**\n\n**Commands:**\n`forceplay`, `help`, `play`, `radio`, `stop`, `zen`\n\n*Note: Wampas uses slash commands, it doesn't have a prefix*")
+
       .setTimestamp()
     interaction.reply({
       embeds: [embed],
-      components: [row2, row1]
+      components: [row2]
     });
 
   }

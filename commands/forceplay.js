@@ -37,7 +37,7 @@ module.exports = {
     });
 
     const vc = interaction.member.voice
-    if (interaction.member.roles.cache.some(role => role.name.toLowerCase() === 'dj') || vc.channel.permissionsFor(interaction.member).has("MANAGE_CHANNELS")) {
+    if (interaction.member.roles.cache.some(role => role.name.toLowerCase() === 'dj') || vc.channel.permissionsFor(interaction.member).has("MANAGE_GUILD")) {
       if (interaction.options.getString('station') === null) {
         client.func.play(interaction, process.env.LOFI_1, 'Lo-fi Beats')
       } else {
@@ -56,23 +56,23 @@ module.exports = {
                 .addComponents(
                   new MessageButton()
                   .setCustomId('previous')
-                  .setStyle('PRIMARY')
-                  .setEmoji('◀️'),
+                  .setStyle('SECONDARY')
+                  .setEmoji('956031533041483786'),
 
                   new MessageButton()
                   .setCustomId('select')
                   .setStyle('SUCCESS')
-                  .setEmoji('✅'),
+                  .setEmoji('956034254557552691'),
 
                   new MessageButton()
                   .setCustomId('next')
-                  .setStyle('PRIMARY')
-                  .setEmoji('▶️'),
+                  .setStyle('SECONDARY')
+                  .setEmoji('957049956663980032'),
 
                   new MessageButton()
                   .setCustomId('close')
                   .setStyle('DANGER')
-                  .setEmoji('✖️')
+                  .setEmoji('956034254582734879')
                 )
               let i = 0
               let embed = new MessageEmbed()
@@ -84,7 +84,7 @@ module.exports = {
                 .setURL(data[0].homepage)
                 .setThumbnail(data[0].favicon.split(" ").join("%20"))
                 .setFooter({
-                  text: '◀️ : Previous, ✅ : Select, ▶️ : Next, ❌ : Close'
+                  text: '<:CircleBack:956031533041483786> | Previous, <:CircleYes:956034254557552691>  | Select, <:CircleSkip:957049956663980032> | Next, <:CircleNo:956034254582734879> : Close'
                 })
               let intr = await interaction.reply({
                 embeds: [embed],
@@ -136,7 +136,7 @@ module.exports = {
         })
       }
     } else return interaction.reply({
-      content: "You don't have `Manage Channel` permission nor do you have a role named `DJ`",
+      content: "You need **`MANAGE_GUILD`** to ForcePlay or you need to have a role named **`DJ`**",
       ephemeral: true
     })
 
