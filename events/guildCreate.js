@@ -34,7 +34,7 @@ module.exports = {
       let embed = new MessageEmbed()
         .setColor("BLURPLE")
         .setTitle("Imagine a Bot...")
-        .setImage("https://cdn.discordapp.com/attachments/939720531492605963/967725122150604800/Desktop_Wallpaper.png")
+        .setImage("https://cdn.discordapp.com/attachments/939720531492605963/968021352491671552/walls.png")
         .setDescription("Thank you for adding Wampas to your server! We have designed a friendly Bot makes it easier than ever to play music in your server 20/4. You can access our website & support server using the URL buttons below!\n\n**Join a Voice Channel then press the <:CirclePlay:956032213009457202> button to start playing**")
         .setAuthor({name: "Wampas™r", iconURL: client.user.displayAvatarURL()})
       channel.send({embeds: [embed], components: [ row2 ]})

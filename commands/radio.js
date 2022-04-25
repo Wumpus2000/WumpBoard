@@ -54,15 +54,21 @@ module.exports = {
           let i = 0
           let embed = new MessageEmbed()
             .setAuthor({
-              name: 'Select the Radio Station',
+              name: 'Select a Station',
               iconURL: client.user.displayAvatarURL()
             })
-            .setTitle(data[0].name)
+            .setTitle(data[1].name)
             .setURL(data[0].homepage)
             .setColor("BLURPLE")
             .setThumbnail(data[0].favicon.split(" ").join("%20"))
-            .setDescription("<:CircleBack:956031533041483786> | Previous, <:CircleYes:956034254557552691>  | Select, <:CircleSkip:957049956663980032> | Next, <:CircleNo:956034254582734879> | Close")
-
+            .addFields(
+              { name: "**<:CircleBack:956031533041483786>**", value: `Previous`, inline: true },
+              { name: "**<:CircleYes:956034254557552691>**", value: `Select`, inline: true },
+              { name: "**<:CircleSkip:957049956663980032>**", value: `Next`, inline: true },
+              { name: "**<:CircleBlank:955671552265965609>**", value: `<:CircleBlank:955671552265965609>`, inline: true},
+              { name: "**<:CircleNo:956034254582734879> **", value: `Close`, inline: true },
+              { name: "**<:CircleBlank:955671552265965609>**", value: `<:CircleBlank:955671552265965609>`, inline: true},
+              )
 
           let intr = await interaction.reply({
             embeds: [embed],
@@ -73,7 +79,7 @@ module.exports = {
             while (true) {
               let collector = await interaction.channel.awaitMessageComponent({
                 filter,
-                time: 30000,
+              
                 componentType: "BUTTON"
               });
               if (collector.user.id === interaction.member.id) {
