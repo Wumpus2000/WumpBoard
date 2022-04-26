@@ -108,7 +108,7 @@ module.exports = {
                       if (i < 0) i = data.length - 1
                       embed.setTitle(data[i].name)
                         .setURL(data[i].homepage)
-                        .setThumbnail(data[i].favicon)
+                        .setThumbnail(data[i].favicon || "https://cdn.discordapp.com/attachments/939720531492605963/967752632196268102/np.png")
                       await interaction.editReply({
                         embeds: [embed],
                         components: [row]
@@ -119,7 +119,7 @@ module.exports = {
                       if (i === data.length) i = 0
                       embed.setTitle(data[i].name)
                         .setURL(data[i].homepage)
-                        .setThumbnail(data[i].favicon)
+                        .setThumbnail(data[i].favicon || "https://cdn.discordapp.com/attachments/939720531492605963/967752632196268102/np.png")
                       await interaction.editReply({
                         embeds: [embed],
                         components: [row]
