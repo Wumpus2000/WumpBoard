@@ -62,10 +62,6 @@ module.exports = {
             .setColor("BLURPLE")
             .setImage("https://cdn.discordapp.com/attachments/939720531492605963/968319518210396170/SELECT_STATIONS.png")
             .setThumbnail(data[0].favicon || "https://cdn.discordapp.com/attachments/939720531492605963/968321500128088074/Baloo.png")
-            .setImage("https://cdn.discordapp.com/attachments/939720531492605963/967667470045417502/bye.png")
-            .setThumbnail(data[0].favicon.split(" ").join("%20" || "https://cdn.discordapp.com/attachments/939720531492605963/967752632196268102/np.png"))
-            .setDescription("<:CircleBack:956031533041483786> | Previous, <:CircleYes:956034254557552691>  | Select, <:CircleSkip:957049956663980032> | Next, <:CircleNo:956034254582734879> | Close")
-
 
           let intr = await interaction.reply({
             embeds: [embed],
@@ -91,9 +87,6 @@ module.exports = {
                     .setURL(data[i].homepage)
                     .setImage("https://cdn.discordapp.com/attachments/939720531492605963/968319518210396170/SELECT_STATIONS.png")
                     .setThumbnail(data[i].favicon  || "https://cdn.discordapp.com/attachments/939720531492605963/968321500128088074/Baloo.png")
-
-                    .setImage("https://cdn.discordapp.com/attachments/939720531492605963/967667470045417502/bye.png")
-                    .setThumbnail(data[i].favicon || "https://cdn.discordapp.com/attachments/939720531492605963/967752632196268102/np.png")
                   await interaction.editReply({
                     embeds: [embed],
                     components: [row]
@@ -106,8 +99,6 @@ module.exports = {
                     .setURL(data[i].homepage)
                     .setImage("https://cdn.discordapp.com/attachments/939720531492605963/968319518210396170/SELECT_STATIONS.png")
                     .setThumbnail(data[i].favicon || "https://cdn.discordapp.com/attachments/939720531492605963/968321500128088074/Baloo.png")
-                    .setImage("https://cdn.discordapp.com/attachments/939720531492605963/967667470045417502/bye.png")
-                    .setThumbnail(data[i].favicon || "https://cdn.discordapp.com/attachments/939720531492605963/967752632196268102/np.png")
                   await interaction.editReply({
                     embeds: [embed],
                     components: [row]
