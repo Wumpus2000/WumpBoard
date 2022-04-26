@@ -38,7 +38,7 @@ async function play(interaction, url, stName, replied) {
   let embed = new MessageEmbed()
     .setColor('BLURPLE')
     .setFields(
-      { name: "**Channel**", value: `${stName}`, inline: true },
+      { name: "**Title**", value: `${stName}`, inline: true },
       { name: "**Joined**", value: `<#${channel.id}>`, inline: true },
       { name: "**Includes url**", value: `${!urls.includes(url)}`, inline: true },
     )
